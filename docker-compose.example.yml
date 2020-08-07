@@ -8,9 +8,9 @@ services:
       - ./node_modules:/bot/node_modules
     ports:
       - 4000:4000
-    tty: true
-    stdin_open: true
     command: npm run dev
+    environment:
+      ACCESS_TOKEN_MESSENGER: <token_messenger>
   ngrok:
     image: wernight/ngrok
     ports:

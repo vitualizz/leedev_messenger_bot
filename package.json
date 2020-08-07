@@ -11,7 +11,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "dev": "nodemon ./app.js",
+    "dev": "ACCESS_TOKEN_MESSENGER=$ACCESS_TOKEN_MESSENGER nodemon ./app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "vitualizz",
