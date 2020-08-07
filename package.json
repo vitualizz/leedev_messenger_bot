@@ -12,8 +12,7 @@
     "sync-request": "^6.1.0"
   },
   "devDependencies": {
-    "eslint": "^7.6.0",
-    "eslint-config-google": "^0.14.0"
+    "eslint": "^7.6.0"
   },
   "scripts": {
     "dev": "ACCESS_TOKEN_MESSENGER=$ACCESS_TOKEN_MESSENGER VERIFY_TOKEN=$VERIFY_TOKEN nodemon -r esm ./app.js",

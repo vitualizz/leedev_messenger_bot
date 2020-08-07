@@ -1,10 +1,13 @@
 module.exports = {
   'env': {
     'es2020': true,
-    'node': true,
+    'node': true
+  },
+  'globals': {
+    'request': true
   },
   'extends': [
-    'google',
+    'eslint:recommended',
   ],
   'parserOptions': {
     'ecmaVersion': 11,

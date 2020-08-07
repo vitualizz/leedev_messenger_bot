@@ -1,9 +1,9 @@
 const request = require('request')
-const sr = require('sync-request')
+const sync_request = require('sync-request')
 const access_token = process.env.ACCESS_TOKEN_MESSENGER
 
 const getUser = (userId) => {
-  const res = sr('GET', `https://graph.facebook.com/${userId}`, {
+  const res = sync_request('GET', `https://graph.facebook.com/${userId}`, {
     'qs': {
       'fields': 'name',
       'access_token': access_token

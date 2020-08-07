@@ -1,6 +1,5 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const request = require('request')
 const app = express()
 import { handleEvent } from './src/index.js'
 
