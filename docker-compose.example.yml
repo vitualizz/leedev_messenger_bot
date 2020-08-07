@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  bot:
+    build: .
+    volumes:
+      - .:/bot
+      - ./node_modules:/bot/node_modules
+    ports:
+      - 4000:4000
+    tty: true
+    stdin_open: true
+    command: npm run dev
+  ngrok:
+    image: wernight/ngrok
+    ports:
+      - "0.0.0.0:4040:4040"
+    environment:
+      # https://github.com/wernight/docker-ngrok
+      NGROK_AUTH: <AUTH>
+      NGROK_PORT: "bot:4000"
+    links:
+      - bot
