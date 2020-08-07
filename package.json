@@ -8,11 +8,15 @@
     "esm": "^3.2.25",
     "express": "^4.17.1",
     "nodemon": "^2.0.4",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "sync-request": "^6.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^7.6.0",
+    "eslint-config-google": "^0.14.0"
+  },
   "scripts": {
-    "dev": "ACCESS_TOKEN_MESSENGER=$ACCESS_TOKEN_MESSENGER nodemon -r esm ./app.js",
+    "dev": "ACCESS_TOKEN_MESSENGER=$ACCESS_TOKEN_MESSENGER VERIFY_TOKEN=$VERIFY_TOKEN nodemon -r esm ./app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "vitualizz",
