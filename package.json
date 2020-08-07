@@ -5,13 +5,14 @@
   "main": "app.js",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "esm": "^3.2.25",
     "express": "^4.17.1",
     "nodemon": "^2.0.4",
     "request": "^2.88.2"
   },
   "devDependencies": {},
   "scripts": {
-    "dev": "ACCESS_TOKEN_MESSENGER=$ACCESS_TOKEN_MESSENGER nodemon ./app.js",
+    "dev": "ACCESS_TOKEN_MESSENGER=$ACCESS_TOKEN_MESSENGER nodemon -r esm ./app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "vitualizz",
