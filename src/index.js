@@ -1,11 +1,12 @@
+import { RouteMessages } from './messages/routes.js'
+
 const request = require('request')
 const sync_request = require('sync-request')
 const access_token = process.env.ACCESS_TOKEN_MESSENGER
-
 const getUser = (userId) => {
   const res = sync_request('GET', `https://graph.facebook.com/${userId}`, {
     'qs': {
-      'fields': 'name',
+      'fields': 'id,name',
       'access_token': access_token
     }
   })
@@ -13,27 +14,11 @@ const getUser = (userId) => {
 }
 
 function handleEvent(senderId, event) {
-  const current_user = getUser(senderId)
   if (event.message) {
     // handleMessage(senderId, event.message);
-    const test = {
-      "recipient": {
-        "id": senderId
-      },
-      "message": {
-        "text": `Hola ${current_user.name}, soy un bot de messenger creado por LeeDev, suerte y que tu código funcione :D`,
-        "quick_replies": [{
-          "content_type": "text",
-          "title": "¡Vamos a programar!",
-          "payload": "ABOUT_PAYLOAD"
-        },{
-          "content_type":"user_phone_number"
-        },{
-          "content_type": "user_email"
-        }]
-      }
-    }
-    callSendApi(test)
+    const current_user = getUser(senderId)
+    const message = RouteMessages(event, current_user)
+    callSendApi(message)
   } else {
     console.log("No hay una función para esto: ", event)
   }
@@ -48,7 +33,7 @@ function callSendApi(response){
     "method": "POST",
     "json": response
   }, (err) => {
-    console.log(err)
+    if (err) console.log(err)
   })
 }
 
