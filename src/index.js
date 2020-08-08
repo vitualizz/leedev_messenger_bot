@@ -15,9 +15,9 @@ const getUser = (userId) => {
 
 function handleEvent(senderId, event) {
   if (event.message) {
-    // handleMessage(senderId, event.message);
     const current_user = getUser(senderId)
-    const message = RouteMessages(event, current_user)
+    console.log("gaaaaa: ", event.message)
+    const message = RouteMessages(event.message, current_user)
     callSendApi(message)
   } else {
     console.log("No hay una función para esto: ", event)

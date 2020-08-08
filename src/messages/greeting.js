@@ -8,11 +8,7 @@ export const greeting = (user) => {
       "quick_replies": [{
         "content_type": "text",
         "title": "¡Vamos a programar!",
-        "payload": "ABOUT_PAYLOAD"
-      },{
-        "content_type":"user_phone_number"
-      },{
-        "content_type": "user_email"
+        "payload": "TO_DEVELOP"
       }]
     }
   }
