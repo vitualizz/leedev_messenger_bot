@@ -16,6 +16,7 @@
   },
   "scripts": {
     "dev": "ACCESS_TOKEN_MESSENGER=$ACCESS_TOKEN_MESSENGER VERIFY_TOKEN=$VERIFY_TOKEN nodemon -r esm ./app.js",
+    "start": "ACCESS_TOKEN_MESSENGER=$ACCESS_TOKEN_MESSENGER VERIFY_TOKEN=$VERIFY_TOKEN node -r esm ./app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "vitualizz",
